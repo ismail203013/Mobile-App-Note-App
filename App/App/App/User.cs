@@ -13,7 +13,7 @@ namespace App
         public string name { get; set; }
         public string Password { get; set; }
 
-        //public List<string> UserNotes { get; set; }
+        public List<string> UserNotes { get; set; }
 
        // public string Camera { get; set; }
 

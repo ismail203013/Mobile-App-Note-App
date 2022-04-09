@@ -61,5 +61,13 @@ namespace App
         {
            await Navigation.PushAsync(new MainPage());
         }
+        private  void Delete_Btn(object sender, EventArgs e)
+        {
+           
+        }
+        private  void Update_Btn (object sender, EventArgs e)
+        {
+           
+        }
     }
 }
