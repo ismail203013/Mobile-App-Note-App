@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.CreateUser">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="userName" Placeholder="Enter username"/>
+            <Entry x:Name="password" Placeholder="Enter Password"/>
+            <CollectionView x:Name="uList">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding name}"  TextColor="Black" />
+                            <Label Text="{Binding Password}" TextColor="Black" />
+                            
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Text="Add To Database" Clicked="Add_btn" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.MainPage" NavigationPage.HasBackButton="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to ......."></Label>
+            <Label Text="Log In"></Label>
+            <Label Text="Please enter your username"></Label>
+            <Entry x:Name="username" Placeholder="Enter Username"/>
+            <Label Text="Please enter your password"></Label>
+            <Entry x:Name="userpassword" Placeholder="Enter Password"/>
+
+            <Button Text="Login"  Clicked="Button_Login"/>
+            <Label Text="Not got an account?"></Label>
+            <Button Text="Create an account" Clicked="Button_Create"      />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

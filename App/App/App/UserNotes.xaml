@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.UserNotes" NavigationPage.HasBackButton="False">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="lblusername" >
+                
+            </Label>
+            <Button Text="Logout" Clicked="Button_LogOut"  />
+            <Entry x:Name="Context" Placeholder="What would you like to add?"/>
+            <CollectionView x:Name="nList" SelectionMode="Single" SelectionChanged="OnMakingSelection">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding Id}"  TextColor="Black" />
+                            <Label Text="{Binding name}"  TextColor="Black" />
+                            <Label Text="{Binding Password}" TextColor="Black" />
+
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Text="Add" Clicked="Button_Add"  />
+            <Button Text="Update Record" Clicked="Update_Btn"/>
+            <Button Text="Delete Record" Clicked="Delete_Btn"/>
+
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
