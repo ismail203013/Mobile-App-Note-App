@@ -34,14 +34,15 @@ namespace App
         {
             if (!string.IsNullOrWhiteSpace(Context.Text))
             {
-                string x = Context.Text;
+               // string x = Context.Text;
 
                 await App.Database.SaveUserAsync(new User
                 {
+                    UserNotes = Context.Text,
 
-            //    UserNotes.Add(x);
+                    // UserNotes.Add(x);
 
-            });
+                });
                 Context.Text = string.Empty;
                 nList.ItemsSource = await App.Database.GetUsersAsync();
 
@@ -53,7 +54,7 @@ namespace App
         void OnMakingSelection(object sender, Xamarin.Forms.SelectionChangedEventArgs e)
         {
             lastSelection = e.CurrentSelection[0] as User;
-          //  Context.Text = lastSelection.UserNotes;
+            Context.Text = lastSelection.UserNotes;
           
         }
 
@@ -61,13 +62,31 @@ namespace App
         {
            await Navigation.PushAsync(new MainPage());
         }
-        private  void Delete_Btn(object sender, EventArgs e)
+        private async void Delete_Btn(object sender, EventArgs e)
         {
-           
+            if (lastSelection != null)
+            {
+                await App.Database.DeleteUserAsync(lastSelection);
+
+                nList.ItemsSource = await App.Database.GetUsersAsync();
+
+                Context.Text = "";
+               
+                /*studyMode.IsChecked = ;*/
+
+            }
         }
-        private  void Update_Btn (object sender, EventArgs e)
+        private async void Update_Btn (object sender, EventArgs e)
         {
-           
+
+            if (lastSelection != null)
+            {
+                lastSelection.UserNotes = Context.Text;
+              
+                await App.Database.UpdateUserAsync(lastSelection);
+
+                nList.ItemsSource = await App.Database.GetUsersAsync();
+            }
         }
     }
 }

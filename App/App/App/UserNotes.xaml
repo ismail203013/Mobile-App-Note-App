@@ -17,6 +17,7 @@
                             <Label Text="{Binding Id}"  TextColor="Black" />
                             <Label Text="{Binding name}"  TextColor="Black" />
                             <Label Text="{Binding Password}" TextColor="Black" />
+                            <Label Text="{Binding UserNotes}" TextColor="Black" />
 
                         </StackLayout>
                     </DataTemplate>
