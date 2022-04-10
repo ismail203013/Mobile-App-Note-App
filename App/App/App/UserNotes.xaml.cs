@@ -12,20 +12,37 @@ namespace App
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UserNotes : ContentPage
     {
-      
-        public UserNotes(int uname)
+        int userid;
+
+        List<Notes> AllNotes = new List<Notes>();
+
+        List<Notes> UserNotesx = new List<Notes>();
+
+         
+    public UserNotes(int Id)
         {
             InitializeComponent();
             //lblusername.Text = uname;
+            userid = Id;
         }
         protected override async void OnAppearing()
 
         {
-
             base.OnAppearing();
-            
 
-            nList.ItemsSource = await App.Database.GetUsersAsync();
+            AllNotes = await App.Database.GetNotesAsync();
+
+            foreach (Notes n in AllNotes)
+            {
+                if (userid == n.UserId)
+                {
+                    UserNotesx.Add(n);
+
+                }
+            }
+
+             nList.ItemsSource = UserNotesx;
+
 
         }
 
@@ -34,26 +51,35 @@ namespace App
         {
             if (!string.IsNullOrWhiteSpace(Context.Text))
             {
-               // string x = Context.Text;
-
-                await App.Database.SaveUserAsync(new User
+            
+                await App.Database.SaveNotesAsync(new Notes
                 {
+                    UserId = userid,
                     UserNotes = Context.Text,
+                                    
 
-                    // UserNotes.Add(x);
-
-                });
+                }) ;
                 Context.Text = string.Empty;
-                nList.ItemsSource = await App.Database.GetUsersAsync();
+                await Navigation.PushAsync(new UserNotes(userid));
+                /* AllNotes.Clear();
+                 UserNotesx.Clear();
+                 AllNotes = await App.Database.GetNotesAsync();
+                 foreach (Notes n in AllNotes)
+                 {
+                     if (userid == n.UserId)
+                     {
+                         UserNotesx.Add(n);
 
-
+                     }
+                 }
+                 nList.ItemsSource = UserNotesx;*/
 
             }
         }
-        User lastSelection;
+        Notes lastSelection;
         void OnMakingSelection(object sender, Xamarin.Forms.SelectionChangedEventArgs e)
         {
-            lastSelection = e.CurrentSelection[0] as User;
+            lastSelection = e.CurrentSelection[0] as Notes;
             Context.Text = lastSelection.UserNotes;
           
         }
@@ -66,14 +92,12 @@ namespace App
         {
             if (lastSelection != null)
             {
-                await App.Database.DeleteUserAsync(lastSelection);
+                await App.Database.DeleteNotesAsync(lastSelection);
 
-                nList.ItemsSource = await App.Database.GetUsersAsync();
+                
 
                 Context.Text = "";
-               
-                /*studyMode.IsChecked = ;*/
-
+                await Navigation.PushAsync(new UserNotes(userid));
             }
         }
         private async void Update_Btn (object sender, EventArgs e)
@@ -83,9 +107,9 @@ namespace App
             {
                 lastSelection.UserNotes = Context.Text;
               
-                await App.Database.UpdateUserAsync(lastSelection);
+                await App.Database.UpdateNotesAsync(lastSelection);
 
-                nList.ItemsSource = await App.Database.GetUsersAsync();
+                await Navigation.PushAsync(new UserNotes(userid));
             }
         }
     }

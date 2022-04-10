@@ -12,10 +12,14 @@ namespace App
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
+        
         public MainPage()
         {
             InitializeComponent();
+        
         }
+   
+     
         private async void Button_Create(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new CreateUser());
@@ -32,7 +36,8 @@ namespace App
             {
                 if (user.name == username.Text && user.Password == userpassword.Text)
                 {
-                    string uname = username.Text;
+                   
+                    
                     await Navigation.PushAsync(new UserNotes(user.Id));
 
                 }

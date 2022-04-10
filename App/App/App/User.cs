@@ -15,7 +15,7 @@ namespace App
 
         //public List<string> UserNotes { get; set; }
 
-        public string UserNotes { get; set; }
+        //public string UserNotes { get; set; }
 
         // public string Camera { get; set; }
 

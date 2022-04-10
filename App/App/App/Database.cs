@@ -13,7 +13,7 @@ namespace App
         {
             _ConnectionString = new SQLiteAsyncConnection(dbPath);
             _ConnectionString.CreateTableAsync<User>();
-
+            _ConnectionString.CreateTableAsync<Notes>();
         }
         public Task<List<User>> GetUsersAsync()
         {
@@ -33,13 +33,31 @@ namespace App
         {
             return _ConnectionString.UpdateAsync(user);
         }
+        public Task<List<Notes>> GetNotesAsync()
+        {
+            return _ConnectionString.Table<Notes>().ToListAsync();
+        }
+
+        public Task<int> SaveNotesAsync(Notes notes)
+        {
+            return _ConnectionString.InsertAsync(notes);
+        }
+
+        public Task<int> DeleteNotesAsync(Notes notes)
+        {
+            return _ConnectionString.DeleteAsync(notes);
+        }
+        public Task<int> UpdateNotesAsync(Notes notes)
+        {
+            return _ConnectionString.UpdateAsync(notes);
+        }
 
 
- /*  public Task<List<User>> DisplayUserOnlyAsync(User user)
-          {
+        /*  public Task<List<User>> DisplayUserOnlyAsync(User user)
+                 {
 
-              return _ConnectionString.Table<User>().ElementAtAsync(1);
+                     return _ConnectionString.Table<User>().ElementAtAsync(1);
 
-          }*/
+                 }*/
     }
 }

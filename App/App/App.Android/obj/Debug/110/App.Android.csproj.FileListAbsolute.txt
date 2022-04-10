@@ -1,3 +1,12 @@
+C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\bin\Debug\App.Android.dll
+C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\bin\Debug\App.Android.pdb
+C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\bin\Debug\com.companyname.app.apk
+C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\bin\Debug\com.companyname.app.aab
+C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\bin\Debug\com.companyname.app-Signed.aab
+C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\bin\Debug\com.companyname.app-Signed.apk
+C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\bin\Debug\com.companyname.app-Signed.apk.idsig
+C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\bin\Debug\App.dll
+C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\bin\Debug\App.pdb
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\MonoAndroid,Version=v11.0.AssemblyAttributes.cs
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\build.props
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\adb.props
@@ -24,15 +33,6 @@ C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.A
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\R.txt
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\R.cs.flag
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\App.Android.csproj.CoreCompileInputs.cache
-C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\bin\Debug\App.Android.dll
-C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\bin\Debug\App.Android.pdb
-C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\bin\Debug\com.companyname.app.apk
-C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\bin\Debug\com.companyname.app.aab
-C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\bin\Debug\com.companyname.app-Signed.aab
-C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\bin\Debug\com.companyname.app-Signed.apk
-C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\bin\Debug\com.companyname.app-Signed.apk.idsig
-C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\bin\Debug\App.dll
-C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\bin\Debug\App.pdb
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\App.Android.csproj.CopyComplete
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\App.Android.dll
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\App.Android.pdb
@@ -54,6 +54,7 @@ C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.A
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\res\mipmap-xxhdpi\launcher_foreground.png
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\res\mipmap-xxxhdpi\icon.png
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\res\mipmap-xxxhdpi\launcher_foreground.png
+C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\res\drawable\luxenotes.png
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\uploadflags.txt
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\resolvedassemblies.hash
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\android\assets\App.Android.dll
