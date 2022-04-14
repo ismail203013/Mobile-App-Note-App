@@ -10,7 +10,7 @@
       "App/1.0.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
-          "Xamarin.Essentials": "1.6.1",
+          "Xamarin.Essentials": "1.7.2",
           "Xamarin.Forms": "5.0.0.2012",
           "sqlite-net-pcl": "1.8.116"
         },
@@ -108,7 +108,7 @@
           }
         }
       },
-      "Xamarin.Essentials/1.6.1": {
+      "Xamarin.Essentials/1.7.2": {
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
         },
@@ -220,12 +220,12 @@
       "path": "system.runtime.compilerservices.unsafe/4.5.2",
       "hashPath": "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
     },
-    "Xamarin.Essentials/1.6.1": {
+    "Xamarin.Essentials/1.7.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-gG1Bp4j4bpJQ0dp9MeBJQJ9c8xULauIlhc7Cx5Qw4J2K1c+4Glq5n+gkb9Pm0UA/CevXVqLK5ZXmZkuYI52FgA==",
-      "path": "xamarin.essentials/1.6.1",
-      "hashPath": "xamarin.essentials.1.6.1.nupkg.sha512"
+      "sha512": "sha512-3r2QA/54YZGw6o+cBmIQdvs9nkT1SNHHvFGl1jg2bJ/INmsPdSU4ddrwhIw6zSWSIMRbemKvXEVov1KwjRk6PQ==",
+      "path": "xamarin.essentials/1.7.2",
+      "hashPath": "xamarin.essentials.1.7.2.nupkg.sha512"
     },
     "Xamarin.Forms/5.0.0.2012": {
       "type": "package",

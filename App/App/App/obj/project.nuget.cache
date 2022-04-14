@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rgIaz6VApxUMzm/o2+ppH4N/cHboFqxf7POrfUaY2rHCD7tVEh/Yra6caSuqtXBOGqopBFNAVltUIkYrYpbmoQ==",
+  "dgSpecHash": "W+LxExVoAWja+lLEzRtztCBW96ElX6sUqlYi//eWreaT33lGYrfU44pu3aYI8xN/6TLL+OQdki6KT35kbtkp+Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ismail\\Documents\\YEAR 2\\Mobile App\\Assignment - App Final\\App\\App\\App\\App.csproj",
   "expectedPackageFiles": [
@@ -15,7 +15,7 @@
     "C:\\Users\\Ismail\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\Ismail\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\Ismail\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
+    "C:\\Users\\Ismail\\.nuget\\packages\\xamarin.essentials\\1.7.2\\xamarin.essentials.1.7.2.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
   ],
   "logs": []

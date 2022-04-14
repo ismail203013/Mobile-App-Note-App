@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -51,12 +51,12 @@ namespace App
         {
             if (!string.IsNullOrWhiteSpace(Context.Text))
             {
-            
+
                 await App.Database.SaveNotesAsync(new Notes
                 {
                     UserId = userid,
                     UserNotes = Context.Text,
-                                    
+                    Location = loc.Text
 
                 }) ;
                 Context.Text = string.Empty;
@@ -111,6 +111,18 @@ namespace App
 
                 await Navigation.PushAsync(new UserNotes(userid));
             }
+        }
+        async void Button_get_loc(object sender, EventArgs e)
+        {
+            Location theVariable = await Geolocation.GetLocationAsync(
+            new GeolocationRequest(GeolocationAccuracy.Default, TimeSpan.FromMinutes(1)));
+            loc.Text = "Lat: " + theVariable.Latitude.ToString() + "    Long:" + theVariable.Longitude.ToString();
+           
+        }
+
+        private void Button_Clicked_Map(object sender, EventArgs e)
+        {
+
         }
     }
 }

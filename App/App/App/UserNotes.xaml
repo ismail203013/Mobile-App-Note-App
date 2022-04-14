@@ -10,13 +10,17 @@
             </Label>
             <Button Text="Logout" Clicked="Button_LogOut"  />
             <Entry x:Name="Context" Placeholder="What would you like to add?"/>
+            <Label x:Name="loc" Text="Location"/>
+            <Button Text="Get Location" Clicked="Button_get_loc"  />
             <CollectionView x:Name="nList" SelectionMode="Single" SelectionChanged="OnMakingSelection">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
 
                             <Label Text="{Binding UserNotes}" TextColor="Black" />
-
+                            <Label Text= "{Binding Location}"  TextColor="Black" />
+                            <Button Text="Open in Maps" Clicked="Button_Clicked_Map"></Button>
+                            <Label Text="-------------------------" TextColor="Black" />
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

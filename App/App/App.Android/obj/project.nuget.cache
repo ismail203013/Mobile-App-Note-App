@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1Gh8LCW5MqJMNp+khSvHmr4fsu/3SlNxgJOCv7Tj9oJqKnPOmvcIpDAFpzISo7yME9itNTTFDcDULwfS2iKnLg==",
+  "dgSpecHash": "SbwcF09t0aTn1KDyAO38HrBJpJBYMclzD/spOc3upWqwiE4ZdBkGDBoV9XJfnLRqPjWBSASjYm9aF5eH0LxWCw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ismail\\Documents\\YEAR 2\\Mobile App\\Assignment - App Final\\App\\App\\App.Android\\App.Android.csproj",
   "expectedPackageFiles": [
@@ -62,5 +62,16 @@
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.google.android.material\\1.2.1.1\\xamarin.google.android.material.1.2.1.1.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.google.guava.listenablefuture\\1.0.0.2\\xamarin.google.guava.listenablefuture.1.0.0.2.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Essentials from 1.7.2 to 1.6.1. Reference the package directly from the project to select a different version. \r\n App.Android -> App -> Xamarin.Essentials (>= 1.7.2) \r\n App.Android -> Xamarin.Essentials (>= 1.6.1)",
+      "libraryId": "Xamarin.Essentials",
+      "targetGraphs": [
+        "MonoAndroid,Version=v11.0"
+      ]
+    }
+  ]
 }
