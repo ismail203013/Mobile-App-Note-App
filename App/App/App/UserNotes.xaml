@@ -10,7 +10,7 @@
             </Label>
             <Button Text="Logout" Clicked="Button_LogOut"  />
             <Entry x:Name="Context" Placeholder="What would you like to add?"/>
-            <Label x:Name="loc" Text="Location"/>
+            <Label x:Name="loc" Text=""/>
             <Button Text="Get Location" Clicked="Button_get_loc"  />
             <CollectionView x:Name="nList" SelectionMode="Single" SelectionChanged="OnMakingSelection">
                 <CollectionView.ItemTemplate>
@@ -18,8 +18,8 @@
                         <StackLayout>
 
                             <Label Text="{Binding UserNotes}" TextColor="Black" />
-                            <Label Text= "{Binding Location}"  TextColor="Black" />
-                            <Button Text="Open in Maps" Clicked="Button_Clicked_Map"></Button>
+                            <Label  x:Name="loclabel" Text= "{Binding Location}"  TextColor="Black" />
+                            <Button  x:Name="mapbtnnn" Text="Open in Maps" Clicked="Button_Clicked_Map"  ></Button>
                             <Label Text="-------------------------" TextColor="Black" />
                         </StackLayout>
                     </DataTemplate>

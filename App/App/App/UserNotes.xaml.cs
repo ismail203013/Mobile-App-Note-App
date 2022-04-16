@@ -17,9 +17,9 @@ namespace App
         List<Notes> AllNotes = new List<Notes>();
 
         List<Notes> UserNotesx = new List<Notes>();
+      
 
-         
-    public UserNotes(int Id)
+        public UserNotes(int Id)
         {
             InitializeComponent();
             //lblusername.Text = uname;
@@ -30,7 +30,10 @@ namespace App
         {
             base.OnAppearing();
 
+            
+
             AllNotes = await App.Database.GetNotesAsync();
+
 
             foreach (Notes n in AllNotes)
             {
@@ -46,6 +49,7 @@ namespace App
 
         }
 
+    
 
         private async void Button_Add (object sender, EventArgs e)
         {
@@ -81,7 +85,9 @@ namespace App
         {
             lastSelection = e.CurrentSelection[0] as Notes;
             Context.Text = lastSelection.UserNotes;
-          
+            loc.Text = lastSelection.Location;
+            
+
         }
 
         private async void Button_LogOut (object sender, EventArgs e)
@@ -112,17 +118,40 @@ namespace App
                 await Navigation.PushAsync(new UserNotes(userid));
             }
         }
-        async void Button_get_loc(object sender, EventArgs e)
+
+        
+
+      public  async void Button_get_loc(object sender, EventArgs e)
         {
             Location theVariable = await Geolocation.GetLocationAsync(
             new GeolocationRequest(GeolocationAccuracy.Default, TimeSpan.FromMinutes(1)));
+            string lan = theVariable.Latitude.ToString();
             loc.Text = "Lat: " + theVariable.Latitude.ToString() + "    Long:" + theVariable.Longitude.ToString();
            
         }
 
-        private void Button_Clicked_Map(object sender, EventArgs e)
+       
+         async void Button_Clicked_Map(object sender, EventArgs e)
         {
+            try
+            {
+                if (loc.Text != null)
+                {
+                    await Map.OpenAsync(53.41318, -1.37120);
+                    //await Navigation.PushAsync(new UserNotes(userid));
+                }
+                else
+                {
+                    await Navigation.PushAsync(new UserNotes(userid));
+                }
+
+            }
+            catch { }
+
 
         }
+
+      
+     
     }
 }

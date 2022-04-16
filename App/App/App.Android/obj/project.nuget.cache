@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SbwcF09t0aTn1KDyAO38HrBJpJBYMclzD/spOc3upWqwiE4ZdBkGDBoV9XJfnLRqPjWBSASjYm9aF5eH0LxWCw==",
+  "dgSpecHash": "GuReXnKg5CtitxwVqZbH6sPDRL0HTMvdTBgmPi94UVjRWC7c8aYlSykSfLXl25V7Rg1sBpmQFZbTD2j2c2GOlQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ismail\\Documents\\YEAR 2\\Mobile App\\Assignment - App Final\\App\\App\\App.Android\\App.Android.csproj",
   "expectedPackageFiles": [
@@ -69,6 +69,16 @@
       "warningLevel": 1,
       "message": "Detected package downgrade: Xamarin.Essentials from 1.7.2 to 1.6.1. Reference the package directly from the project to select a different version. \r\n App.Android -> App -> Xamarin.Essentials (>= 1.7.2) \r\n App.Android -> Xamarin.Essentials (>= 1.6.1)",
       "libraryId": "Xamarin.Essentials",
+      "targetGraphs": [
+        "MonoAndroid,Version=v11.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Forms from 5.0.0.2401 to 5.0.0.2012. Reference the package directly from the project to select a different version. \r\n App.Android -> App -> Xamarin.Forms (>= 5.0.0.2401) \r\n App.Android -> Xamarin.Forms (>= 5.0.0.2012)",
+      "libraryId": "Xamarin.Forms",
       "targetGraphs": [
         "MonoAndroid,Version=v11.0"
       ]
