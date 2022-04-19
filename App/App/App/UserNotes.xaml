@@ -12,16 +12,28 @@
             <Entry x:Name="Context" Placeholder="What would you like to add?"/>
             <Label x:Name="loc" Text=""/>
             <Button Text="Get Location" Clicked="Button_get_loc"  />
+          
             <CollectionView x:Name="nList" SelectionMode="Single" SelectionChanged="OnMakingSelection">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItem Text="Delete" BackgroundColor="Red" Invoked="Delete_Btn" >
+                                    
+                                </SwipeItem>
+                            </SwipeView.RightItems>
+                        
                         <StackLayout>
 
-                            <Label Text="{Binding UserNotes}" TextColor="Black" />
+                            
+                                 <Label Text="{Binding UserNotes}" TextColor="Black" />
                             <Label  x:Name="loclabel" Text= "{Binding Location}"  TextColor="Black" />
-                            <Button  x:Name="mapbtnnn" Text="Open in Maps" Clicked="Button_Clicked_Map"  ></Button>
+                          <Button  x:Name="mapbtnnn" Text="Open in Maps" Clicked="Button_Clicked_Map"></Button>
                             <Label Text="-------------------------" TextColor="Black" />
+                                                 
+                                 
                         </StackLayout>
+                        </SwipeView>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

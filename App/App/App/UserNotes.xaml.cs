@@ -105,7 +105,11 @@ namespace App
                 Context.Text = "";
                 await Navigation.PushAsync(new UserNotes(userid));
             }
+            
         }
+
+       
+
         private async void Update_Btn (object sender, EventArgs e)
         {
 
