@@ -17,8 +17,12 @@ namespace App
 
         public CreateUser()
         {
+        
             InitializeComponent();
-            notificationManager = DependencyService.Get<INotificationManager>();
+            var navigationPage = Application.Current.MainPage as NavigationPage;
+            navigationPage.BarBackgroundColor = Color.AntiqueWhite;
+          
+          notificationManager = DependencyService.Get<INotificationManager>();
             notificationManager.NotificationReceived += (sender, eventArgs) =>
             {
                 var evtData = (NotificationEventArgs)eventArgs;
@@ -37,15 +41,7 @@ namespace App
                 stackLayout.Children.Add(msg);
             });
         }
-        protected override async void OnAppearing()
-
-        {
-
-            base.OnAppearing();
-
-            uList.ItemsSource = await App.Database.GetUsersAsync();
-
-        }
+       
 
         private async void Add_btn(object sender, EventArgs e)
         {
@@ -66,7 +62,7 @@ namespace App
                 string message = $" Account made succesfully :) ";
                 notificationManager.ScheduleNotification(title, message);
 
-                uList.ItemsSource = await App.Database.GetUsersAsync();
+          
                
 
 

@@ -20,7 +20,7 @@
 
             <Button Text="Login" BackgroundColor="MediumPurple" Clicked="Button_Login"  TextColor="White" FontSize="20" FontAttributes="Bold" FontFamily="AT" CornerRadius="40"  HorizontalOptions="Center" WidthRequest="270"  HeightRequest="38"/>
            
-                       <Label   Text="Not got an account?" FontFamily="AT" Padding="20" TextColor="Black" FontSize="20" VerticalOptions="Fill"  ></Label>
+                       <Label   Text="Not got an account?" FontFamily="AT" Padding="20" TextColor="Black" FontSize="24" VerticalOptions="Fill"  ></Label>
             <Button Text="Create an account"  BackgroundColor="MediumPurple" FontAttributes="Italic" TextColor="White" Clicked="Button_Create" FontSize="17" FontFamily="AT" CornerRadius="40"  HorizontalOptions="Center" WidthRequest="270"  HeightRequest="35"     />
            
      

@@ -1,23 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App.CreateUser">
+             x:Class="App.CreateUser" BackgroundColor="AntiqueWhite"  NavigationPage.IconColor="Black" >
     <ContentPage.Content>
-        <StackLayout   x:Name="stackLayout" >
-            <Entry x:Name="userName" Placeholder="Enter username"/>
-            <Entry x:Name="password" Placeholder="Enter Password"/>
-            <CollectionView x:Name="uList">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout>
-                            <Label Text="{Binding name}"  TextColor="Black" />
-                            <Label Text="{Binding Password}" TextColor="Black" />
-                            
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-            <Button Text="Add To Database" Clicked="Add_btn" />
+        
+        <StackLayout   x:Name="stackLayout" VerticalOptions="Center" HorizontalOptions="Center" >
+                     <Label Text="Create an Account" Padding="20" FontFamily="DK" HorizontalOptions="Center" VerticalOptions="Center"
+        FontSize="50" TextColor="Black"></Label>
+            <Entry x:Name="userName" Placeholder="Enter username" VerticalOptions="CenterAndExpand" TextColor="Black" HorizontalOptions="Center" WidthRequest="270"  />
+            <Entry x:Name="password" Placeholder="Enter Password"  TextColor="Black" HorizontalOptions="Center" WidthRequest="270"  />
+            <Frame Padding="50" BackgroundColor="AntiqueWhite" HasShadow="False">
+                
+            
+            <Button Text="Submit"  BackgroundColor="MediumPurple"  Clicked="Add_btn" FontAttributes="Italic" TextColor="White"  FontSize="17" FontFamily="AT" CornerRadius="40"  HorizontalOptions="Center" WidthRequest="270"  HeightRequest="35"  />
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

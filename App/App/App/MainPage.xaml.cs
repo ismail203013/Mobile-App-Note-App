@@ -38,7 +38,7 @@ namespace App
                 {
                    
                     
-                    await Navigation.PushAsync(new UserNotes(user.Id));
+                    await Navigation.PushAsync(new UserNotes(user.Id , user.name));
 
                 }
             }

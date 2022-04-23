@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,17 +15,30 @@ namespace App
     public partial class UserNotes : ContentPage
     {
         int userid;
+        string uname;
 
         List<Notes> AllNotes = new List<Notes>();
 
         List<Notes> UserNotesx = new List<Notes>();
+
       
 
-        public UserNotes(int Id)
+        public static string photofilename;
+        public static string imagePath;
+        static SQLiteConnection db;
+        Notes notes = new Notes();
+   
+        
+        public UserNotes(int Id, string name)
         {
             InitializeComponent();
-            //lblusername.Text = uname;
+
+            uname = name;
+
+            lblusername.Text = name + ",";
+
             userid = Id;
+           
         }
         protected override async void OnAppearing()
 
@@ -46,7 +61,6 @@ namespace App
 
              nList.ItemsSource = UserNotesx;
 
-
         }
 
     
@@ -60,11 +74,13 @@ namespace App
                 {
                     UserId = userid,
                     UserNotes = Context.Text,
-                    Location = loc.Text
+                    Location = loc.Text,
+                    Pic = imagePath,
+                    
 
                 }) ;
                 Context.Text = string.Empty;
-                await Navigation.PushAsync(new UserNotes(userid));
+                await Navigation.PushAsync(new UserNotes(userid, uname));
                 /* AllNotes.Clear();
                  UserNotesx.Clear();
                  AllNotes = await App.Database.GetNotesAsync();
@@ -86,7 +102,7 @@ namespace App
             lastSelection = e.CurrentSelection[0] as Notes;
             Context.Text = lastSelection.UserNotes;
             loc.Text = lastSelection.Location;
-            
+            resultImage.Source = imagePath;
 
         }
 
@@ -103,7 +119,7 @@ namespace App
                 
 
                 Context.Text = "";
-                await Navigation.PushAsync(new UserNotes(userid));
+                await Navigation.PushAsync(new UserNotes(userid, uname));
             }
             
         }
@@ -119,7 +135,7 @@ namespace App
               
                 await App.Database.UpdateNotesAsync(lastSelection);
 
-                await Navigation.PushAsync(new UserNotes(userid));
+                await Navigation.PushAsync(new UserNotes(userid, uname));
             }
         }
 
@@ -130,7 +146,7 @@ namespace App
             Location theVariable = await Geolocation.GetLocationAsync(
             new GeolocationRequest(GeolocationAccuracy.Default, TimeSpan.FromMinutes(1)));
             string lan = theVariable.Latitude.ToString();
-            loc.Text = "Lat: " + theVariable.Latitude.ToString() + "    Long:" + theVariable.Longitude.ToString();
+            loc.Text = "Latitude: " + theVariable.Latitude.ToString() + "    Longitude:" + theVariable.Longitude.ToString();
            
         }
 
@@ -146,7 +162,7 @@ namespace App
                 }
                 else
                 {
-                    await Navigation.PushAsync(new UserNotes(userid));
+                    await Navigation.PushAsync(new UserNotes(userid, uname));
                 }
 
             }
@@ -155,7 +171,39 @@ namespace App
 
         }
 
-      
-     
+        async void Button_Picture(object sender, EventArgs e)
+        {
+            var photo = await MediaPicker.CapturePhotoAsync();
+            
+            if ( photo != null)
+            {
+                LoadPhotoAsync(photo);
+                photofilename = photo.FileName;
+                imagePath = Path.Combine(FileSystem.AppDataDirectory, photofilename);
+                resultImage.Source = imagePath;
+            }
+
+        }
+        async void LoadPhotoAsync(FileResult photo)
+        {
+            // canceled
+            string PhotoPath;
+            if (photo == null)
+            {
+
+                PhotoPath = null;
+                return;
+            }
+            // save the file into local storage
+            var newFile = Path.Combine(FileSystem.AppDataDirectory, photo.FileName);
+            using (var stream = await photo.OpenReadAsync())
+            using (var newStream = File.OpenWrite(newFile))
+                await stream.CopyToAsync(newStream);
+
+            PhotoPath = newFile;
+
+        }
+
+
     }
 }

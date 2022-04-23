@@ -1,19 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App.UserNotes" NavigationPage.HasBackButton="False">
+             x:Class="App.UserNotes" NavigationPage.HasBackButton="False" NavigationPage.HasNavigationBar="False" BackgroundColor="AntiqueWhite" >
     
     <ContentPage.Content>
         <StackLayout>
-            <Label x:Name="lblusername" >
+            <StackLayout>
+                <Grid  Padding="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0"  x:Name="lblusername" FontSize="53"  TextColor="Black"  HorizontalOptions="StartAndExpand" VerticalOptions="Center" FontFamily="AT" />
+                    <Button Grid.Column="1" BackgroundColor="MediumPurple" FontAttributes="Italic" TextColor="White" FontSize="23" FontFamily="AT" CornerRadius="40"   WidthRequest="150"  HeightRequest="150" Text="Logout" Clicked="Button_LogOut" HorizontalOptions="End" VerticalOptions="Center" />
+                </Grid>
+            </StackLayout>
+            <StackLayout >
                 
-            </Label>
-            <Button Text="Logout" Clicked="Button_LogOut"  />
-            <Entry x:Name="Context" Placeholder="What would you like to add?"/>
-            <Label x:Name="loc" Text=""/>
-            <Button Text="Get Location" Clicked="Button_get_loc"  />
           
-            <CollectionView x:Name="nList" SelectionMode="Single" SelectionChanged="OnMakingSelection">
+            <Entry x:Name="Context" Placeholder="What would you like to add?"/>
+            <Label x:Name="loc" Text="" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black" />
+                <Grid BackgroundColor="AntiqueWhite" Padding="10" HeightRequest="120" VerticalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                   <Button Grid.Column="0" Text="Get Location" Clicked="Button_get_loc" BackgroundColor="MediumPurple" FontAttributes="Italic" TextColor="White" FontSize="22" FontFamily="AT" CornerRadius="40"  VerticalOptions="Center"   />
+                    <Button Grid.Column="1" Text="Capture Photo" Clicked="Button_Picture" BackgroundColor="MediumPurple" FontAttributes="Italic" TextColor="White" FontSize="22" FontFamily="AT" CornerRadius="40" VerticalOptions="Center"  />
+                </Grid>
+                <Image x:Name="resultImage" HeightRequest="90" ></Image>
+         
+            </StackLayout>
+
+                <CollectionView x:Name="nList" SelectionMode="Single" SelectionChanged="OnMakingSelection"  >
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <SwipeView>
@@ -23,13 +42,14 @@
                                 </SwipeItem>
                             </SwipeView.RightItems>
                         
-                        <StackLayout>
+                        <StackLayout BackgroundColor="AntiqueWhite">
 
-                            
-                                 <Label Text="{Binding UserNotes}" TextColor="Black" />
-                            <Label  x:Name="loclabel" Text= "{Binding Location}"  TextColor="Black" />
-                          <Button  x:Name="mapbtnnn" Text="Open in Maps" Clicked="Button_Clicked_Map"></Button>
-                            <Label Text="-------------------------" TextColor="Black" />
+
+                                <Label Text="{Binding UserNotes}" TextColor="Black" FontFamily="PF"  HorizontalOptions="Center"/>
+                                <Label  x:Name="loclabel" Text= "{Binding Location}" FontFamily="PF"   TextColor="Black"  HorizontalOptions="Center" />
+                                <Button  x:Name="mapbtnnn" Text="Open in Maps" FontFamily="PF"  Clicked="Button_Clicked_Map" BackgroundColor="PowderBlue"  CornerRadius="40"   HorizontalOptions="Center"></Button>
+                           <Image x:Name="Image" Source="{Binding Pic}" HeightRequest="40"  ></Image>
+                            <Label Text="END OF NOTE" TextColor="Black"  HorizontalOptions="Center"/>
                                                  
                                  
                         </StackLayout>
@@ -37,13 +57,11 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Button Text="Add" Clicked="Button_Add"  />
-            <Button Text="Update Record" Clicked="Update_Btn"/>
-            <Button Text="Delete Record" Clicked="Delete_Btn"/>
-
-
-
-
+         
+            <StackLayout HeightRequest="123" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10">
+                <Button Text="Add Note" HeightRequest="49" Clicked="Button_Add" BackgroundColor="MediumPurple" FontAttributes="Italic" TextColor="White" FontSize="22" FontFamily="AT" CornerRadius="40"  />
+            <Button Text="Update Note" HeightRequest="49" Clicked="Update_Btn" BackgroundColor="MediumPurple" FontAttributes="Italic" TextColor="White" FontSize="22" FontFamily="AT" CornerRadius="40" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

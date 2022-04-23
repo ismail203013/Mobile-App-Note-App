@@ -13,6 +13,8 @@
   <ItemGroup>
     <None Remove="Resources\Fonts\Asthan.ttf" />
     <None Remove="Resources\Fonts\DosenKiller.ttf" />
+    <None Remove="Resources\Fonts\HoneyNotes.ttf" />
+    <None Remove="Resources\Fonts\Papernotes.otf" />
   </ItemGroup>
 
   <ItemGroup>
