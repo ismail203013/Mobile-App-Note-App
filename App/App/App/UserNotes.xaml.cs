@@ -16,6 +16,8 @@ namespace App
     {
         int userid;
         string uname;
+         int lan;
+        int lon;
         
 
         List<Notes> AllNotes = new List<Notes>();
@@ -81,6 +83,7 @@ namespace App
 
                 }) ;
                 Context.Text = string.Empty;
+                imagePath = string.Empty;
                 await Navigation.PushAsync(new UserNotes(userid, uname));
                 /* AllNotes.Clear();
                  UserNotesx.Clear();
@@ -103,7 +106,9 @@ namespace App
             lastSelection = e.CurrentSelection[0] as Notes;
             Context.Text = lastSelection.UserNotes;
             loc.Text = lastSelection.Location;
+            imagePath = lastSelection.Pic;
             resultImage.Source = imagePath;
+        //  resultImage.Source = imagePath;
 
         }
 
@@ -120,6 +125,7 @@ namespace App
                 
 
                 Context.Text = "";
+                //resultImage = null;
                 await Navigation.PushAsync(new UserNotes(userid, uname));
             }
             
@@ -133,6 +139,10 @@ namespace App
             if (lastSelection != null)
             {
                 lastSelection.UserNotes = Context.Text;
+
+                lastSelection.Location = loc.Text;
+
+                lastSelection.Pic = imagePath;
               
                 await App.Database.UpdateNotesAsync(lastSelection);
 
@@ -146,7 +156,8 @@ namespace App
         {
             Location theVariable = await Geolocation.GetLocationAsync(
             new GeolocationRequest(GeolocationAccuracy.Default, TimeSpan.FromMinutes(1)));
-            string lan = theVariable.Latitude.ToString();
+             lan = (int)theVariable.Latitude;
+             lon = (int)theVariable.Longitude;
             loc.Text = "Latitude: " + theVariable.Latitude.ToString() + "    Longitude:" + theVariable.Longitude.ToString();
            
         }
@@ -158,7 +169,7 @@ namespace App
             {
                 if (loc.Text != null)
                 {
-                    await Map.OpenAsync(53.41318, -1.37120);
+                    await Map.OpenAsync(lan , lon);
                     //await Navigation.PushAsync(new UserNotes(userid));
                 }
                 else
@@ -181,7 +192,9 @@ namespace App
                 LoadPhotoAsync(photo);
                 photofilename = photo.FileName;
                 imagePath = Path.Combine(FileSystem.AppDataDirectory, photofilename);
-                resultImage.Source = imagePath;
+
+                var stream = await photo.OpenReadAsync();
+                resultImage.Source = ImageSource.FromStream(()=> stream);
             }
 
         }
