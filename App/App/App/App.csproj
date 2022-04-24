@@ -12,14 +12,18 @@
 
   <ItemGroup>
     <None Remove="Resources\Fonts\Asthan.ttf" />
+    <None Remove="Resources\Fonts\BherlianNote.ttf" />
     <None Remove="Resources\Fonts\DosenKiller.ttf" />
     <None Remove="Resources\Fonts\HoneyNotes.ttf" />
     <None Remove="Resources\Fonts\Papernotes.otf" />
+    <None Remove="Resources\Fonts\Papernotes.ttf" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\Fonts\Asthan.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\BherlianNote.ttf" />
     <EmbeddedResource Include="Resources\Fonts\DosenKiller.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Papernotes.ttf" />
   </ItemGroup>
 
   <ItemGroup>

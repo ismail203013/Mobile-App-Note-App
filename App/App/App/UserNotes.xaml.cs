@@ -16,6 +16,7 @@ namespace App
     {
         int userid;
         string uname;
+        
 
         List<Notes> AllNotes = new List<Notes>();
 
@@ -124,8 +125,8 @@ namespace App
             
         }
 
-       
 
+      
         private async void Update_Btn (object sender, EventArgs e)
         {
 

@@ -2,8 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App.UserNotes" NavigationPage.HasBackButton="False" NavigationPage.HasNavigationBar="False" BackgroundColor="AntiqueWhite" >
-    
+  
     <ContentPage.Content>
+        
+        
         <StackLayout>
             <StackLayout>
                 <Grid  Padding="10">
@@ -32,28 +34,33 @@
          
             </StackLayout>
 
-                <CollectionView x:Name="nList" SelectionMode="Single" SelectionChanged="OnMakingSelection"  >
+                <CollectionView x:Name="nList" SelectionMode="Single" VerticalScrollBarVisibility="Always" SelectionChanged="OnMakingSelection" >
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <SwipeView>
-                            <SwipeView.RightItems>
-                                <SwipeItem Text="Delete" BackgroundColor="Red" Invoked="Delete_Btn" >
-                                    
-                                </SwipeItem>
-                            </SwipeView.RightItems>
+
                         
-                        <StackLayout BackgroundColor="AntiqueWhite">
+                            <SwipeView>
+                                <SwipeView.RightItems>
+                                    <SwipeItem Text="Delete" BackgroundColor="Red" Invoked="Delete_Btn" >
+
+                                    </SwipeItem>
+                                </SwipeView.RightItems>
+
+                                <StackLayout >
 
 
-                                <Label Text="{Binding UserNotes}" TextColor="Black" FontFamily="PF"  HorizontalOptions="Center"/>
-                                <Label  x:Name="loclabel" Text= "{Binding Location}" FontFamily="PF"   TextColor="Black"  HorizontalOptions="Center" />
-                                <Button  x:Name="mapbtnnn" Text="Open in Maps" FontFamily="PF"  Clicked="Button_Clicked_Map" BackgroundColor="PowderBlue"  CornerRadius="40"   HorizontalOptions="Center"></Button>
-                           <Image x:Name="Image" Source="{Binding Pic}" HeightRequest="40"  ></Image>
-                            <Label Text="END OF NOTE" TextColor="Black"  HorizontalOptions="Center"/>
-                                                 
-                                 
-                        </StackLayout>
-                        </SwipeView>
+                                    <Label Text="{Binding UserNotes}" TextColor="Black" FontFamily="PK" FontAttributes="Bold" FontSize="33"  HorizontalOptions="Center"/>
+                                    <Label  x:Name="loclabel" Text= "{Binding Location}" TextColor="Black"  HorizontalOptions="Center" />
+                                    <Button  x:Name="mapbtnnn" Text="Open in Maps" FontFamily="PF"  Clicked="Button_Clicked_Map" BackgroundColor="PowderBlue"  CornerRadius="40"   HorizontalOptions="Center"></Button>
+                                    <Image x:Name="Image" Source="{Binding Pic}" HeightRequest="40"  ></Image>
+                                    <Label Text="END OF NOTE" TextColor="Black"  HorizontalOptions="Center"/>
+
+
+                                </StackLayout>
+
+                            </SwipeView>
+                        
+
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
