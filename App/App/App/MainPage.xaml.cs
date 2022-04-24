@@ -24,7 +24,10 @@ namespace App
         {
             await Navigation.PushAsync(new CreateUser());
         }
-     
+        public void ShowPass(object sender, EventArgs args)
+        {
+            userpassword.IsPassword = userpassword.IsPassword ? false : true;
+        }
 
         private async void Button_Login(object sender, EventArgs e)
         {

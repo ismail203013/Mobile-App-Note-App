@@ -37,8 +37,9 @@
                 <CollectionView x:Name="nList" SelectionMode="Single" VerticalScrollBarVisibility="Always" SelectionChanged="OnMakingSelection" >
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
+                        <StackLayout>
 
-                        
+                           
                             <SwipeView>
                                 <SwipeView.RightItems>
                                     <SwipeItem Text="Delete" BackgroundColor="Red" Invoked="Delete_Btn" >
@@ -49,7 +50,7 @@
                                 <StackLayout BackgroundColor="AntiqueWhite">
 
 
-                                <Label Text="{Binding UserNotes}" TextColor="Black" FontFamily="AT" FontAttributes="Bold" FontSize="33"  HorizontalOptions="Center"/>
+                                <Label Text="{Binding UserNotes}" TextColor="Black" FontFamily="PK" FontAttributes="Bold" FontSize="33"  HorizontalOptions="Center"/>
                                     <Label  x:Name="loclabel" Text= "{Binding Location}" FontAttributes="Bold" TextColor="Black"  HorizontalOptions="Center" />
                                     <Button  x:Name="mapbtnnn" Text="Open in Maps" FontFamily="PF"  Clicked="Button_Clicked_Map" BackgroundColor="PowderBlue"  CornerRadius="40"   HorizontalOptions="Center"></Button>
                                     <Image x:Name="Image" Source="{Binding Pic}" HeightRequest="90"  ></Image>
@@ -59,7 +60,8 @@
                                 </StackLayout>
 
                             </SwipeView>
-                        
+                            
+                        </StackLayout>
 
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

@@ -41,8 +41,11 @@ namespace App
                 stackLayout.Children.Add(msg);
             });
         }
-       
 
+        public void ShowPass(object sender, EventArgs args)
+        {
+            password.IsPassword = password.IsPassword ? false : true;
+        }
         private async void Add_btn(object sender, EventArgs e)
         {
 

@@ -16,7 +16,23 @@
         VerticalOptions="Center" FontSize="50" TextColor="Black"></Label>
             <Label Text="Please sign in to continue." VerticalOptions="Center" FontSize="27" HorizontalOptions="Start" Padding="10" FontFamily="AT" TextColor="Black"></Label>
             <Entry x:Name="username" Placeholder="Username"  VerticalOptions="Center" TextColor="Black" HorizontalOptions="Center" WidthRequest="270"     />
-            <Entry x:Name="userpassword" Placeholder="Password"  VerticalOptions="Center" TextColor="Black" HorizontalOptions="Center" WidthRequest="270"/>
+            <StackLayout Grid.Row="2" Grid.Column="0" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Entry x:Name="userpassword" Placeholder="Password"   IsPassword="True" VerticalOptions="Center" TextColor="Black" HorizontalOptions="End" WidthRequest="130"/>
+                    <Image Source="eye32.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" Grid.Column="1">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ShowPass" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </StackLayout>
+           
+            
+           
 
             <Button Text="Login" BackgroundColor="MediumPurple" Clicked="Button_Login"  TextColor="White" FontSize="20" FontAttributes="Bold" FontFamily="AT" CornerRadius="40"  HorizontalOptions="Center" WidthRequest="270"  HeightRequest="38"/>
            

@@ -7,8 +7,25 @@
         <StackLayout   x:Name="stackLayout" VerticalOptions="Center" HorizontalOptions="Center" >
                      <Label Text="Create an Account" Padding="20" FontFamily="DK" HorizontalOptions="Center" VerticalOptions="Center"
         FontSize="50" TextColor="Black"></Label>
-            <Entry x:Name="userName" Placeholder="Enter username" VerticalOptions="CenterAndExpand" TextColor="Black" HorizontalOptions="Center" WidthRequest="270"  />
-            <Entry x:Name="password" Placeholder="Enter Password"  TextColor="Black" HorizontalOptions="Center" WidthRequest="270"  />
+            <Entry x:Name="userName" Placeholder="Username" Grid.Row="1" Grid.Column="1" VerticalOptions="CenterAndExpand" TextColor="Black" HorizontalOptions="Center" WidthRequest="270"  />
+            <StackLayout Grid.Row="2" Grid.Column="0"  >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                  
+                      
+                        <Entry x:Name="password"  Placeholder="Password" Grid.Row="0" IsPassword="True"  TextColor="Black" HorizontalOptions="End" WidthRequest="130"  />
+                    
+                        <Image Source="eye32.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" Grid.Column="1">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ShowPass" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </StackLayout>
+           
             <Frame Padding="50" BackgroundColor="AntiqueWhite" HasShadow="False">
                 
             
