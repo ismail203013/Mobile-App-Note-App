@@ -26,7 +26,7 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                   <Button Grid.Column="0" Text="Get Location" Clicked="Button_get_loc" HeightRequest="150" BackgroundColor="MediumPurple" FontAttributes="Italic" TextColor="White" FontSize="18" FontFamily="AT" CornerRadius="40"  VerticalOptions="Center"   />
+                    <Button Grid.Column="0" Text="Get Location" Clicked="Button_get_loc" HeightRequest="150" BackgroundColor="MediumPurple" FontAttributes="Italic" TextColor="White" FontSize="18" FontFamily="AT" CornerRadius="40"  VerticalOptions="Center"   />
                     <Button Grid.Column="1" Text="Capture Photo" Clicked="Button_Picture" HeightRequest="150" BackgroundColor="MediumPurple" FontAttributes="Italic" TextColor="White" FontSize="18" FontFamily="AT" CornerRadius="40" VerticalOptions="Center" HorizontalOptions="Center"  />
                 </Grid>
                 <Image x:Name="resultImage" HeightRequest="90" ></Image>
