@@ -39,14 +39,18 @@
 
 
 
-                            <SwipeView >
-                                <SwipeView.RightItems>
-                                    <SwipeItem Text="Delete" BackgroundColor="Red" Invoked="Delete_Btn" IconImageSource="trash.png">
+                            <SwipeView  >
 
-                                    </SwipeItem>
+                                <SwipeView.RightItems>
+                                    <SwipeItems>
+                                        <SwipeItem x:Name ="Delete" Text="DELETE"  IconImageSource="Bin.png"
+                                        BackgroundColor="Red"
+                                       Invoked="Delete_Btn">
+                                        </SwipeItem>
+                                    </SwipeItems>
                                 </SwipeView.RightItems>
 
-                                <StackLayout BackgroundColor="AntiqueWhite">
+                                 <StackLayout BackgroundColor="AntiqueWhite">
 
 
                                 <Label Text="{Binding UserNotes}" TextColor="Black" FontFamily="AT" FontAttributes="Bold" FontSize="33"  HorizontalOptions="Center"/>
@@ -56,17 +60,8 @@
                                     <Label Text="*END OF NOTE*" FontAttributes="Bold" TextColor="Black"  HorizontalOptions="Center" Padding="13"/>
 
 
-                            </StackLayout>
-                            <VisualStateManager.VisualStateGroups>
-                                <VisualStateGroup Name="CommonStates">
-                                    <VisualState Name="Normal" />
-                                    <VisualState Name="Selected">
-                                        <VisualState.Setters>
-                                            <Setter Property="BackgroundColor" Value="Yellow" />
-                                        </VisualState.Setters>
-                                    </VisualState>
-                                </VisualStateGroup>
-                            </VisualStateManager.VisualStateGroups>
+                                    </StackLayout>
+                           
 
                         </SwipeView>
                             
