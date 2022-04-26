@@ -12,12 +12,12 @@ using Xamarin.Forms.Xaml;
 namespace App
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
+
     public partial class UserNotes : ContentPage
     {
         int userid;
         string uname;
-         int lan;
-        int lon;
+     
         
 
         List<Notes> AllNotes = new List<Notes>();
@@ -28,8 +28,8 @@ namespace App
 
         public static string photofilename;
         public static string imagePath;
-        static SQLiteConnection db;
-        Notes notes = new Notes();
+    /*  //  static SQLiteConnection db;
+      //  Notes notes = new Notes();*/
    
         
         public UserNotes(int Id, string name)
@@ -83,6 +83,7 @@ namespace App
 
                 }) ;
                 Context.Text = string.Empty;
+                loc.Text = string.Empty;
                 imagePath = string.Empty;
                 await Navigation.PushAsync(new UserNotes(userid, uname));
                 /* AllNotes.Clear();
@@ -122,10 +123,11 @@ namespace App
             {
                 await App.Database.DeleteNotesAsync(lastSelection);
 
-                
+
 
                 Context.Text = "";
-                //resultImage = null;
+                loc.Text = null;
+                imagePath = null;
                 await Navigation.PushAsync(new UserNotes(userid, uname));
             }
             
@@ -152,33 +154,49 @@ namespace App
 
         
 
-      public  async void Button_get_loc(object sender, EventArgs e)
+      public async void Button_get_loc(object sender, EventArgs e)
         {
-            Location theVariable = await Geolocation.GetLocationAsync(
+            var theVariable = await Geolocation.GetLocationAsync(
             new GeolocationRequest(GeolocationAccuracy.Default, TimeSpan.FromMinutes(1)));
-             lan = (int)theVariable.Latitude;
-             lon = (int)theVariable.Longitude;
-            loc.Text = "Latitude: " + theVariable.Latitude.ToString() + "    Longitude:" + theVariable.Longitude.ToString();
-           
+            // lan = (int)theVariable.Latitude;
+            // lon = (int)theVariable.Longitude;
+            loc.Text = "Longitude:" + theVariable.Latitude.ToString() + "    Latitude: " + theVariable.Longitude.ToString();
+           // double lan = theVariable.Longitude;
+            //double _lat = theVariable.Latitude;
+           // loc.Text = lan.ToString();
         }
 
-       
+         //string split;
          async void Button_Clicked_Map(object sender, EventArgs e)
         {
             try
             {
-                if (loc.Text != null)
+
+                if (loc.Text != "")
                 {
-                    await Map.OpenAsync(lan , lon);
-                    //await Navigation.PushAsync(new UserNotes(userid));
+                    /*  List<string> myList = new List<string>();
+                      loc.Text = split;
+                      string[] words = split.Split(' ');
+                      myList.AddRange(words);
+
+                     var lan = myList.Take(0);
+                     var lon = myList.Take(1);*/
+
+                    //  var lan = loc.Text;
+
+                    // int s = Convert.ToInt32(lan);
+                    await Map.OpenAsync(53.4110943 , -1.3912311 );
+                   
                 }
-                else
+                else if (loc.Text == "")
                 {
                     await Navigation.PushAsync(new UserNotes(userid, uname));
                 }
+            }
+            catch
+            {
 
             }
-            catch { }
 
 
         }

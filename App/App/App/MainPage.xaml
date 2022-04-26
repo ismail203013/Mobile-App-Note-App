@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App.MainPage" NavigationPage.HasBackButton="False" BackgroundColor="AntiqueWhite" NavigationPage.HasNavigationBar="False" >
     <ContentPage.Content>
-        
-        <StackLayout x:Name="stackLayout1">
-            <StackLayout Padding="20">
+        <ScrollView>
+            <StackLayout x:Name="stackLayout1">
+            
+                <StackLayout Padding="20">
                 <Frame CornerRadius="40" IsClippedToBounds="True" >
                    <Image Source="luxenotes.png" HorizontalOptions="Center" 
         VerticalOptions="Center" />  
@@ -35,11 +36,16 @@
            
 
             <Button Text="Login" BackgroundColor="MediumPurple" Clicked="Button_Login"  TextColor="White" FontSize="20" FontAttributes="Bold" FontFamily="AT" CornerRadius="40"  HorizontalOptions="Center" WidthRequest="270"  HeightRequest="38"/>
-           
-                       <Label   Text="Not got an account?" FontFamily="AT" Padding="20" TextColor="Black" FontSize="24" VerticalOptions="Fill"  ></Label>
-            <Button Text="Create an account"  BackgroundColor="MediumPurple" FontAttributes="Italic" TextColor="White" Clicked="Button_Create" FontSize="17" FontFamily="AT" CornerRadius="40"  HorizontalOptions="Center" WidthRequest="270"  HeightRequest="35"     />
-           
-     
-        </StackLayout>
+                <Label x:Name="ErrorLabel" TextColor="Red" FontAttributes="Bold" FontSize="16" HorizontalOptions="CenterAndExpand" FontFamily="AT"/>
+                <ActivityIndicator x:Name="activityIndicator" IsRunning="{Binding IsBusy}" VerticalOptions="Center" Color="MediumPurple" HorizontalOptions="Center">
+
+                </ActivityIndicator>
+                <Label   Text="Not got an account?" FontFamily="AT" Padding="10" TextColor="Black" FontSize="24" VerticalOptions="Fill"  ></Label>
+                
+                <StackLayout Padding="10" >
+                    <Button Text="Create an account" BackgroundColor="MediumPurple" FontAttributes="Italic" TextColor="White" Clicked="Button_Create" FontSize="17" FontFamily="AT" CornerRadius="40"  HorizontalOptions="Center" WidthRequest="200"  HeightRequest="35"     />
+                </StackLayout>
+
+            </StackLayout></ScrollView>
     </ContentPage.Content>
 </ContentPage>

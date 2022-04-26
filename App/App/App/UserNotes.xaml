@@ -4,43 +4,42 @@
              x:Class="App.UserNotes" NavigationPage.HasBackButton="False" NavigationPage.HasNavigationBar="False" BackgroundColor="AntiqueWhite" >
   
     <ContentPage.Content>
-        
-        
-        <StackLayout>
+     
+            <StackLayout>
             <StackLayout>
                 <Grid  Padding="10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0"  x:Name="lblusername" FontSize="53"  TextColor="Black"  HorizontalOptions="StartAndExpand" VerticalOptions="Center" FontFamily="AT" />
-                    <Button Grid.Column="1" BackgroundColor="MediumPurple" FontAttributes="Italic" TextColor="White" FontSize="23" FontFamily="AT" CornerRadius="40"   WidthRequest="150"  HeightRequest="150" Text="Logout" Clicked="Button_LogOut" HorizontalOptions="End" VerticalOptions="Center" />
+                    <Label Grid.Column="0"  x:Name="lblusername" FontSize="30"   TextColor="Black"   HorizontalOptions="StartAndExpand" VerticalOptions="Center" FontFamily="AT" />
+                    <Button Grid.Column="1" BackgroundColor="MediumPurple" FontAttributes="Italic" TextColor="White" FontSize="19" FontFamily="AT" CornerRadius="40"   WidthRequest="100"  HeightRequest="170" Text="Logout" Clicked="Button_LogOut" HorizontalOptions="End" VerticalOptions="Center" />
                 </Grid>
             </StackLayout>
             <StackLayout BackgroundColor="AntiqueWhite">
 
 
-                <Entry x:Name="Context" Placeholder="What would you like to add?" FontAttributes="Bold" FontSize="33"   FontFamily="AT"/>
+                <Entry x:Name="Context" Placeholder="What would you like to add?" FontAttributes="Bold" FontSize="25"   FontFamily="AT"/>
             <Label x:Name="loc" Text="" HorizontalOptions="Center" FontAttributes="Bold" VerticalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black" />
-                <Grid BackgroundColor="AntiqueWhite" Padding="10" HeightRequest="120" VerticalOptions="Center">
+                <Grid BackgroundColor="AntiqueWhite" Padding="10"  >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                   <Button Grid.Column="0" Text="Get Location" Clicked="Button_get_loc" BackgroundColor="MediumPurple" FontAttributes="Italic" TextColor="White" FontSize="22" FontFamily="AT" CornerRadius="40"  VerticalOptions="Center"   />
-                    <Button Grid.Column="1" Text="Capture Photo" Clicked="Button_Picture" BackgroundColor="MediumPurple" FontAttributes="Italic" TextColor="White" FontSize="22" FontFamily="AT" CornerRadius="40" VerticalOptions="Center"  />
+                   <Button Grid.Column="0" Text="Get Location" Clicked="Button_get_loc" HeightRequest="150" BackgroundColor="MediumPurple" FontAttributes="Italic" TextColor="White" FontSize="18" FontFamily="AT" CornerRadius="40"  VerticalOptions="Center"   />
+                    <Button Grid.Column="1" Text="Capture Photo" Clicked="Button_Picture" HeightRequest="150" BackgroundColor="MediumPurple" FontAttributes="Italic" TextColor="White" FontSize="18" FontFamily="AT" CornerRadius="40" VerticalOptions="Center" HorizontalOptions="Center"  />
                 </Grid>
                 <Image x:Name="resultImage" HeightRequest="90" ></Image>
          
             </StackLayout>
-
-                <CollectionView x:Name="nList" SelectionMode="Single" VerticalScrollBarVisibility="Always" SelectionChanged="OnMakingSelection" >
+                <StackLayout>
+                    <CollectionView x:Name="nList" SelectionMode="Single" VerticalScrollBarVisibility="Always"  SelectionChanged="OnMakingSelection" >
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout>
 
-                           
-                            <SwipeView>
+
+
+                            <SwipeView BackgroundColor="White">
                                 <SwipeView.RightItems>
                                     <SwipeItem Text="Delete" BackgroundColor="Red" Invoked="Delete_Btn" >
 
@@ -50,27 +49,45 @@
                                 <StackLayout BackgroundColor="AntiqueWhite">
 
 
-                                <Label Text="{Binding UserNotes}" TextColor="Black" FontFamily="PK" FontAttributes="Bold" FontSize="33"  HorizontalOptions="Center"/>
+                                <Label Text="{Binding UserNotes}" TextColor="Black" FontFamily="AT" FontAttributes="Bold" FontSize="33"  HorizontalOptions="Center"/>
                                     <Label  x:Name="loclabel" Text= "{Binding Location}" FontAttributes="Bold" TextColor="Black"  HorizontalOptions="Center" />
                                     <Button  x:Name="mapbtnnn" Text="Open in Maps" FontFamily="PF"  Clicked="Button_Clicked_Map" BackgroundColor="PowderBlue"  CornerRadius="40"   HorizontalOptions="Center"></Button>
                                     <Image x:Name="Image" Source="{Binding Pic}" HeightRequest="90"  ></Image>
-                                    <Label Text="*END OF NOTE*" FontAttributes="Bold" TextColor="Black"  HorizontalOptions="Center"/>
+                                    <Label Text="*END OF NOTE*" FontAttributes="Bold" TextColor="Black"  HorizontalOptions="Center" Padding="13"/>
 
 
-                                </StackLayout>
+                            </StackLayout>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup Name="CommonStates">
+                                    <VisualState Name="Normal" />
+                                    <VisualState Name="Selected">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="Yellow" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
 
-                            </SwipeView>
+                        </SwipeView>
                             
-                        </StackLayout>
+                      
 
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-         
-            <StackLayout HeightRequest="123" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10">
-                <Button Text="Add Note" HeightRequest="49" Clicked="Button_Add" BackgroundColor="MediumPurple" FontAttributes="Italic" TextColor="White" FontSize="22" FontFamily="AT" CornerRadius="40"  />
-            <Button Text="Update Note" HeightRequest="49" Clicked="Update_Btn" BackgroundColor="MediumPurple" FontAttributes="Italic" TextColor="White" FontSize="22" FontFamily="AT" CornerRadius="40" />
+                </StackLayout>
+                <StackLayout HeightRequest="170" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10">
+                <Grid BackgroundColor="AntiqueWhite" Padding="10"  VerticalOptions="Center"  >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Text="Add Note" Grid.Column="0" HeightRequest="150" Clicked="Button_Add" BackgroundColor="MediumPurple" FontAttributes="Italic" TextColor="White" FontSize="21" FontFamily="AT" CornerRadius="40"  />
+                    <Button Text="Update Note" Grid.Column="1" HeightRequest="150" Clicked="Update_Btn" BackgroundColor="MediumPurple" FontAttributes="Italic" TextColor="White" FontSize="21" FontFamily="AT" CornerRadius="40" />
+                </Grid>
+              
+            
             </StackLayout>
-        </StackLayout>
-    </ContentPage.Content>
+            </StackLayout>
+          </ContentPage.Content>
 </ContentPage>
