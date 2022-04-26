@@ -4,7 +4,7 @@
     <SelectedDevice>TCL 5059Y</SelectedDevice>
     <ActiveDebugProfile>TCL 5059Y</ActiveDebugProfile>
     <DefaultDevice>pixel_2_xl_pie_9_0_-_api_28</DefaultDevice>
-    <SelectedPlatformGroup>PhysicalDevice</SelectedPlatformGroup>
+    <SelectedPlatformGroup>Emulator</SelectedPlatformGroup>
     <AndroidDesignerPreferredTheme>MainTheme</AndroidDesignerPreferredTheme>
   </PropertyGroup>
 </Project>

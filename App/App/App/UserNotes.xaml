@@ -39,9 +39,9 @@
 
 
 
-                            <SwipeView BackgroundColor="White">
+                            <SwipeView >
                                 <SwipeView.RightItems>
-                                    <SwipeItem Text="Delete" BackgroundColor="Red" Invoked="Delete_Btn" IconImageSource="bin.png">
+                                    <SwipeItem Text="Delete" BackgroundColor="Red" Invoked="Delete_Btn" IconImageSource="trash.png">
 
                                     </SwipeItem>
                                 </SwipeView.RightItems>

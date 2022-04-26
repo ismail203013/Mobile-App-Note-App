@@ -63,6 +63,7 @@ C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.A
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\res\mipmap-xxxhdpi\icon.png
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\res\mipmap-xxxhdpi\launcher_foreground.png
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\res\drawable\luxenotes.png
+C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\res\drawable\eye32.png
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\uploadflags.txt
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\resolvedassemblies.hash
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\android\assets\App.Android.dll
@@ -637,5 +638,4 @@ C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.A
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
-C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\res\drawable\eye32.png
-C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\res\drawable\bin.png
+C:\Users\Ismail\Documents\YEAR 2\Mobile App\Assignment - App Final\App\App\App.Android\obj\Debug\110\res\drawable\trash.png
